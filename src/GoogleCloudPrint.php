@@ -95,4 +95,9 @@ class GoogleCloudPrint
     {
         return new PrintTask($this->getAccessToken(), 'application/pdf');
     }
+
+    public function search($query = '')
+    {
+        return new SearchTask($this->getAccessToken(), $query);
+    }
 }

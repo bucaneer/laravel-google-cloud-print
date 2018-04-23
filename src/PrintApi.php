@@ -71,6 +71,16 @@ class PrintApi
         return $api->makeHttpCall(self::URL_SUBMIT, $options, $headers);
     }
 
+    public static function search($accessToken, $query, $options = [], $headers = [])
+    {
+        $api = new $self;
+        $api->accessToken = $accessToken;
+
+        $options['q'] = $query;
+
+        return $api->makeHttpCall(self::URL_SEARCH, $options, $headers);
+    }
+
 
     /**
      * Makes http calls to Google Cloud Print using curl
